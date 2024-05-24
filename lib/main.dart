@@ -18,11 +18,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: FlutterCamera(
-        color: null,
-      ),
-      // initialRoute: AppRoutes.Login,
-      // getPages: AppPages.Lists,
+      initialRoute: AppRoutes.Login,
+      getPages: AppPages.Lists,
     );
   }
 }

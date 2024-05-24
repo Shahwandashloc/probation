@@ -13,8 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final HomeController controller =
-      Get.put(HomeController()); // Initialize the controller
+  final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -288,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 170),
+                                    padding: const EdgeInsets.only(left: 190),
                                     child: IconButton(
                                       iconSize: 36.0,
                                       icon: Icon(
@@ -669,7 +668,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Obx(
                   () => AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
+                    duration: Duration(milliseconds: 800),
                     height: controller.isExpanded4.value ? 570 : 100,
                     color: Colors.amber[50],
                     child: SingleChildScrollView(
@@ -693,7 +692,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Text("Concierge"),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 170),
+                                    padding: const EdgeInsets.only(left: 190),
                                     child: IconButton(
                                       iconSize: 36.0,
                                       icon: Icon(

@@ -1,10 +1,11 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Presentations/Camera/Controller/CameraController.dart';
 import 'package:flutter_application_1/Routes/App_routes.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class QRViewExample extends StatefulWidget {
@@ -15,9 +16,11 @@ class QRViewExample extends StatefulWidget {
 }
 
 class _QRViewExampleState extends State<QRViewExample> {
+  final CameraControllers controllers = Get.put(CameraControllers());
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+
   @override
   void reassemble() {
     super.reassemble();
@@ -81,7 +84,10 @@ class _QRViewExampleState extends State<QRViewExample> {
                     style: ButtonStyle(
                       backgroundColor: WidgetStateProperty.all(Colors.green),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.find<CameraControllers>().scanningEnabled.value =
+                          true;
+                    },
                     child: SizedBox(
                       width: 200,
                       height: 50,
@@ -117,6 +123,8 @@ class _QRViewExampleState extends State<QRViewExample> {
                     ),
                     onPressed: () {
                       Get.toNamed(AppRoutes.Home);
+                      Get.find<CameraControllers>().scanningEnabled.value =
+                          false;
                     },
                     child: Text(
                       "I don't have a receipt yet",
@@ -158,9 +166,11 @@ class _QRViewExampleState extends State<QRViewExample> {
       this.controller = controller;
     });
     controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-      });
+      if (Get.find<CameraControllers>().scanningEnabled.value) {
+        setState(() {
+          result = scanData;
+        });
+      }
     });
   }
 
@@ -179,23 +189,3 @@ class _QRViewExampleState extends State<QRViewExample> {
     super.dispose();
   }
 }
-// @override
-// void reassemble() {
-//   super.reassemble();
-//   if (Platform.isAndroid) {
-//     controller!.pauseCamera();
-//   }
-//   controller!.resumeCamera();
-// }
-//
-//
-// Container(
-// margin: const EdgeInsets.all(8),
-// child: ElevatedButton(
-// onPressed: () async {
-// await controller?.pauseCamera();
-// },
-// child: const Text('pause',
-// style: TextStyle(fontSize: 20)),
-// ),
-// ),
