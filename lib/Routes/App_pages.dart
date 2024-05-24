@@ -21,7 +21,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.Camera,
-      page: () => CameraPage(),
+      page: () => QRViewExample(),
     )
   ];
 }

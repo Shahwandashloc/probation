@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Presentations/Camera/CameraPage.dart';
 import 'package:flutter_application_1/Routes/App_pages.dart';
 import 'package:flutter_application_1/Routes/App_routes.dart';
+import 'package:flutter_application_1/dummmy.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -16,8 +18,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.Login,
-      getPages: AppPages.Lists,
+      home: FlutterCamera(
+        color: null,
+      ),
+      // initialRoute: AppRoutes.Login,
+      // getPages: AppPages.Lists,
     );
   }
 }

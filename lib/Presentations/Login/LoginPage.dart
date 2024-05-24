@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/1.jpg"), fit: BoxFit.cover)),
         child: BackdropFilter(
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Row(
@@ -30,26 +30,26 @@ class LoginPage extends StatelessWidget {
                     children: [
                       Container(
                         color: Colors.yellow,
-                        child: Icon(
+                        child: const Icon(
                           Icons.car_rental_rounded,
                           size: 30,
                         ),
                       ),
                       Container(
                         color: Colors.green.shade200,
-                        child: Icon(
+                        child: const Icon(
                           Icons.dining_sharp,
                           size: 30,
                         ),
                       ),
                       Container(
                         color: Colors.blue.shade300,
-                        child: Icon(
+                        child: const Icon(
                           Icons.flight_takeoff,
                           size: 30,
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Expensify",
                         style: TextStyle(
                             color: Colors.white,
@@ -58,20 +58,20 @@ class LoginPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 50,
                       ),
                       CircleAvatar(
                         backgroundColor: Colors.blue.shade300,
-                        child: Icon(Icons.dinner_dining_sharp),
+                        child: const Icon(Icons.dinner_dining_sharp),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           "Concierge",
                           style: TextStyle(
@@ -80,14 +80,14 @@ class LoginPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Welcome! How would you like to connect?',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
@@ -95,12 +95,12 @@ class LoginPage extends StatelessWidget {
                     height: 80,
                     child: TextFormField(
                       decoration: InputDecoration(
-                          prefixIcon: Icon(
+                          prefixIcon: const Icon(
                             Icons.email_outlined,
                             color: Colors.lightBlue,
                           ),
                           hintText: "Email",
-                          hintStyle: TextStyle(fontSize: 13),
+                          hintStyle: const TextStyle(fontSize: 13),
                           filled: true,
                           fillColor: Colors.grey[200],
                           border: OutlineInputBorder(
@@ -109,7 +109,8 @@ class LoginPage extends StatelessWidget {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 20)),
+                          contentPadding:
+                              const EdgeInsets.symmetric(vertical: 20)),
                     ),
                   ),
                   Container(
@@ -122,7 +123,7 @@ class LoginPage extends StatelessWidget {
                             color: Colors.green.shade300,
                           ),
                           hintText: "Phone number",
-                          hintStyle: TextStyle(fontSize: 13),
+                          hintStyle: const TextStyle(fontSize: 13),
                           filled: true,
                           fillColor: Colors.grey[200],
                           border: OutlineInputBorder(
@@ -131,7 +132,8 @@ class LoginPage extends StatelessWidget {
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 20)),
+                          contentPadding:
+                              const EdgeInsets.symmetric(vertical: 20)),
                     ),
                   ),
                   ElevatedButton(
@@ -141,13 +143,13 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Get.toNamed(AppRoutes.Joining);
                     },
-                    child: Text(
+                    child: const Text(
                       "Next",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 160),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 160),
                     child: Text(
                       "You weren't born to do expenses",
                       style: TextStyle(
@@ -163,24 +165,24 @@ class LoginPage extends StatelessWidget {
                       thickness: 5,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     "The OutBound Life",
                     style: TextStyle(color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
-                  Text(
+                  const Text(
                     "Expensify customer till 2018",
                     style: TextStyle(color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
